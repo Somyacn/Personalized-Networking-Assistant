@@ -158,13 +158,12 @@ In `backend/fact_checker.py`, we fetch the top summary paragraph of a Wikipedia 
 ![Home Page](images/Home%20Page.png)
 
 ### Conversation Generator
-![Conversation Generator](images/Conversation%20Gener....png)
-
+![Conversation Generator](images/Conversation%20Generator.png)
 ### Fact Checker
 ![Fact Checker](images/Fact%20Checker.png)
 
 ### History and Feedback
-![History and Feedback](images/History%20And%20Feedba....png)
+![History and Feedback](images/History%20And%20Feedback.png)
 
 ### Swagger UI
 ![Swagger UI](images/Swagger%20UI.png)
