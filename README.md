@@ -166,7 +166,7 @@ In `backend/fact_checker.py`, we fetch the top summary paragraph of a Wikipedia 
 ![History and Feedback](images/History%20And%20Feedback.png)
 
 ### Swagger UI
-![Swagger UI](images/Swagger%20UI.png)
+![Swagger UI](images/Swagger%20UI%20.png)
 
 ### Backend Terminal
-![Backend Terminal](images/Backend%20Terminal.png)
+![Backend Terminal](images/Backend%20Terminal%20.png)
