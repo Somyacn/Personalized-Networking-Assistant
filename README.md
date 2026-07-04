@@ -41,6 +41,13 @@ Personalized_Networking_Assistant/
 │   └── main.py                # FastAPI endpoints (/generate-conversation, /fact-check, etc.)
 ├── frontend/
 │   ├── app.py                 # Streamlit frontend styled with premium CSS
+├── images/                    # Application Screenshots and UI images
+│   ├── Backend Terminal.png
+│   ├── Conversation Generator.png
+│   ├── Fact Checker.png
+│   ├── History And Feedback.png
+│   ├── Home Page.png
+│   └── Swagger UI.png
 ├── tests/
 │   ├── __init__.py
 │   └── test_backend.py        # Automated Pytest suite with mocked transformer pipelines
@@ -142,3 +149,25 @@ In `backend/fact_checker.py`, we fetch the top summary paragraph of a Wikipedia 
 - **Entailment (Supported)**: The Wikipedia context logically proves the statement.
 - **Contradiction (Refuted)**: The Wikipedia context logically contradicts the statement.
 - **Neutral**: The Wikipedia context does not have enough information to confirm or deny.
+
+---
+
+## Screenshots
+
+### Home Page
+![Home Page](images/Home%20Page.png)
+
+### Conversation Generator
+![Conversation Generator](images/Conversation%20Gener....png)
+
+### Fact Checker
+![Fact Checker](images/Fact%20Checker.png)
+
+### History and Feedback
+![History and Feedback](images/History%20And%20Feedba....png)
+
+### Swagger UI
+![Swagger UI](images/Swagger%20UI.png)
+
+### Backend Terminal
+![Backend Terminal](images/Backend%20Terminal.png)
