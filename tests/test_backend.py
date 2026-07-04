@@ -167,3 +167,4 @@ def test_clear_endpoints():
     resp2 = client.post("/feedback/clear")
     assert resp2.status_code == 200
     assert len(feedback_logger.get_feedback()) == 0
+
