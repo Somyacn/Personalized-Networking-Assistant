@@ -4,9 +4,9 @@ from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from backend.event_analyzer import analyze_event_description
-from backend.topic_generator import generate_conversation_starters
-from backend.fact_checker import search_wikipedia, verify_claim
+from backend import event_analyzer
+from backend import topic_generator
+from backend import fact_checker
 from backend import history_logger
 from backend import feedback_logger
 
@@ -82,7 +82,7 @@ def read_root():
 def analyze_event(payload: EventAnalysisRequest):
     """Extract categories/themes from event description."""
     try:
-        themes = analyze_event_description(payload.event_description, mock=payload.mock)
+        themes = event_analyzer.analyze_event_description(payload.event_description, mock=payload.mock)
         return EventAnalysisResponse(themes=themes)
     except Exception as e:
         raise HTTPException(
@@ -95,10 +95,10 @@ def generate_conversation(payload: GenerateConversationRequest):
     """Generate 3 personalized conversation starters, log the query and output to history."""
     try:
         # 1. Analyze description to get themes first
-        themes = analyze_event_description(payload.event_description, mock=payload.mock)
+        themes = event_analyzer.analyze_event_description(payload.event_description, mock=payload.mock)
         
         # 2. Generate topics using themes & user interests
-        starters = generate_conversation_starters(
+        starters = topic_generator.generate_conversation_starters(
             event_description=payload.event_description,
             user_interests=payload.user_interests,
             themes=themes,
@@ -131,7 +131,7 @@ async def fact_check(payload: FactCheckRequest):
     """Verify a claim using Wikipedia and NLI classifier."""
     try:
         # 1. Search Wikipedia
-        title, summary, url = await search_wikipedia(payload.claim)
+        title, summary, url = await fact_checker.search_wikipedia(payload.claim)
         print("TITLE =", title)
         print("SUMMARY =", summary)
         print("URL =", url)
@@ -146,7 +146,7 @@ async def fact_check(payload: FactCheckRequest):
             )
             
         # 2. Verify claim against summary
-        result = verify_claim(payload.claim, summary, mock=payload.mock)
+        result = fact_checker.verify_claim(payload.claim, summary, mock=payload.mock)
         
         return FactCheckResponse(
             verdict=result["verdict"],
