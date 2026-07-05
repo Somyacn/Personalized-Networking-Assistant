@@ -41,13 +41,14 @@ Personalized_Networking_Assistant/
 │   └── main.py                # FastAPI endpoints (/generate-conversation, /fact-check, etc.)
 ├── frontend/
 │   ├── app.py                 # Streamlit frontend styled with premium CSS
-├── images/                    # Application Screenshots and UI images
+├── images/
 │   ├── Backend Terminal.png
 │   ├── Conversation Generator.png
 │   ├── Fact Checker.png
 │   ├── History And Feedback.png
 │   ├── Home Page.png
-│   └── Swagger UI.png
+│   ├── Swagger UI.png
+│   └── Test Results.png
 ├── tests/
 │   ├── __init__.py
 │   └── test_backend.py        # Automated Pytest suite with mocked transformer pipelines
@@ -170,3 +171,6 @@ In `backend/fact_checker.py`, we fetch the top summary paragraph of a Wikipedia 
 
 ### Backend Terminal
 ![Backend Terminal](images/Backend%20Terminal%20.png)
+
+### Test Results
+![Test Results](images/Test%20Results.png)
