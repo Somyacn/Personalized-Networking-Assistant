@@ -1,0 +1,19 @@
+ER DIAGRAM - PERSONALIZED NETWORKING ASSISTANT
+
+This ER diagram represents the structure of the Personalized Networking Assistant system.
+
+Entities involved:
+- User Profile
+- Event Context
+- Networking Session
+- Generated Starter
+- Wikipedia Fact Check
+- Log Entry
+
+Relationships:
+- One user can have multiple networking sessions
+- Each session generates multiple conversation starters
+- Each session can trigger multiple fact-checks and logs
+- Each event can be linked to multiple sessions
+
+This structure ensures normalized design and proper traceability of AI-generated outputs.
