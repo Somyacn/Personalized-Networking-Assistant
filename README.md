@@ -27,6 +27,27 @@ The application uses **FastAPI** for the backend service, **Streamlit** for a pr
 
 ---
 
+## Project Architecture 
+
+User  
+  ↓  
+Streamlit Frontend  
+  ↓  
+FastAPI Backend  
+  ↓  
+Services Layer  
+   ├── Event Analyzer (DistilBERT)  
+   ├── Topic Generator (GPT-2)  
+   ├── Fact Checker (Wikipedia API)  
+   ├── History Logger  
+   └── Feedback Logger  
+  ↓  
+Data Layer  
+   ├── JSON Storage (history.json, feedback.json)  
+   └── Wikipedia API
+
+---
+
 ## Project Structure
 
 ```text
@@ -174,3 +195,23 @@ In `backend/fact_checker.py`, we fetch the top summary paragraph of a Wikipedia 
 
 ### Test Results
 ![Test Results](images/Test%20Results.png)
+
+---
+
+## Future Improvements
+- Add more fact-checking sources besides Wikipedia.
+- Improve conversation personalization using user preferences.
+- Deploy the application on cloud platforms.
+
+
+---
+
+## Author
+**Somya Chauhan**
+Bachelor of Computer Application
+
+
+---
+
+## License
+This project is developed for educational purposes.
